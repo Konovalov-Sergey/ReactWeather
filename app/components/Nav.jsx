@@ -4,7 +4,14 @@ var {Link, IndexLink} = require('react-router');
 var Nav = React.createClass({
 	onSearch: function(e) {
 		e.preventDefault();
-		alert('not yet wired up!');
+		
+		var location = this.refs.search.value;
+		var encodedLocation = encodeURIComponent(location);
+		
+		if (location.length > 0) {
+        	this.refs.search.value = '';
+        	window.location.hash = '#/?location=' + encodedLocation;
+      }
 	},
 	render: function() {
 		return(
@@ -43,7 +50,8 @@ var Nav = React.createClass({
 							<li>
 								<input 
 									type="search" 
-									placeholder="Search weather"
+									placeholder="Search ewather by city"
+									ref="search"
 								/>
 							</li>
 							<li>
