@@ -50,7 +50,7 @@ var Nav = React.createClass({
 							<li>
 								<input 
 									type="search" 
-									placeholder="Search ewather by city"
+									placeholder="Search weather by city"
 									ref="search"
 								/>
 							</li>
